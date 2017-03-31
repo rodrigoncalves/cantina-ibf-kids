@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @kid.name %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>Saldo:</strong>
   <%= @kid.amount %>
 </p>
 
 <p>
-  <strong>Team:</strong>
-  <%= @kid.team %>
+  <strong>Equipe:</strong>
+  <%= @kid.team.name %>
 </p>
 
-<%= link_to 'Edit', edit_kid_path(@kid) %> |
-<%= link_to 'Back', kids_path %>
+<%= link_to 'Editar', edit_kid_path(@kid) %> |
+<%= link_to 'Voltar', kids_path %>

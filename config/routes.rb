@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'kids#index'
 
-  resources :teams
   resources :kids
+  resources :teams
 
 end

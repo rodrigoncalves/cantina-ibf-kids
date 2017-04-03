@@ -1,44 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="row">
-    <h1>Crianças</h1>
 
-    <table class="table table-hover table-striped table-bordered highlight responsive-table">
-      <thead>
-        <tr>
-          <th style="text-align: center">Nome</th>
-          <th style="text-align: center">Saldo</th>
-          <th style="text-align: center">Equipe</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+<h1>Lista de acampantes</h1>
 
-      <tbody>
-        <% @kids.each do |kid| %>
-          <tr>
-            <td align="center"><%= kid.name %></td>
-            <td align="center"><%= number_to_currency(kid.amount, unit:"R$", separator:",", delimiter:".") %></td>
-            <td align="center"><%= kid.team.name %></td>
-            <td align="center"><%= link_to 'Ver', kid %></td>
-            <td align="center"><%= link_to 'Editar', edit_kid_path(kid) %></td>
-            <td align="center"><%= link_to 'Deletar', kid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
+<%= link_to 'Cadastrar novo', new_kid_path %>
+<br>
+<br>
 
-      <tfoot>
-        <tr>
-          <th style="text-align: center">Nome</th>
-          <th style="text-align: center">Saldo</th>
-          <th style="text-align: center">Equipe</th>
-          <th colspan="3"></th>
-        </tr>
-      </tfoot>
-    </table>
+<table class="table table-hover table-striped table-bordered highlight responsive-table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Nome</th>
+      <th style="text-align: center">Saldo</th>
+      <th style="text-align: center">Equipe</th>
+      <th style="text-align: center" colspan="3">Ações</th>
+    </tr>
+  </thead>
 
-    <br>
-    <%= link_to 'Cadastrar novo', new_kid_path %>
+  <tbody>
+    <% @kids.each do |kid| %>
+      <tr>
+        <td align="center"><%= kid.name %></td>
+        <td align="center"><%= number_to_currency(kid.amount, unit:"R$ ", separator:",", delimiter:".") %></td>
+        <td align="center"><%= kid.team.name %></td>
+        <td align="center"><%= link_to 'Comprar', kid %></td>
+        <td align="center"><%= link_to 'Editar', edit_kid_path(kid) %></td>
+        <td align="center"><%= link_to 'Remover', kid, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 
-  </div>
-</div>
+  <tfoot>
+    <tr>
+      <th style="text-align: center">Nome</th>
+      <th style="text-align: center">Saldo</th>
+      <th style="text-align: center">Equipe</th>
+      <th style="text-align: center" colspan="3">Ações</th>
+    </tr>
+  </tfoot>
+</table>

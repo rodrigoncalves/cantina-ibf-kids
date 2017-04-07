@@ -15,6 +15,7 @@ class KidsController < ApplicationController
   # GET /kids/new
   def new
     @kid = Kid.new
+    @teams = Team.all
   end
 
   # GET /kids/1/edit

@@ -13,20 +13,69 @@
 
   <div class="field">
     <%= f.label "Nome" %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label "Saldo" %>
-    <%= f.text_field :amount %>
+    <%= f.text_field :amount, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label "Equipe" %>
-    <%= f.text_field :team_id %>
+    <%= f.select :team_id, options_for_select(@teams.map{ |t| [t.name, t.id] }), {}, {class: "form-control"} %>
   </div>
 
   <div class="actions">
     <%= f.submit "Salvar" %>
   </div>
+
 <% end %>
+
+<div class="container theme-showcase" role="main">
+      <div class="page-header">
+        <h1>Cadastrar Acampante</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+
+    <form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
+      <div class="form-group">
+        <label for="nome">Nome do Acampante</label><span style='color:red;'>*</span>
+        <input name="nome" type="text" class="form-control" id="nome" placeholder="Insira o nome do Acampante" maxlength="60">
+      </div>
+      <div class="form-group">
+      <label for="equipe">Equipe</label><span style='color:red;'>*</span>
+        <select class="form-control" name="equipe" id="equipe">
+          <option>Selecione...</option>
+          <option>Adoratubers</option>
+          <option>Kidscípulos</option>
+          <option>Discitubers</option>
+          <option>Youdiscípulos</option>
+          <option>Discipuloucos por Cristo</option>
+          <option>Likes para Jesus</option>
+          <option>Discipulindas</option>
+          <option>VEVO em Cristo</option>
+          <option>Loukinhas por Jesus</option>
+          <option>GraceTube</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="conta">Valor a ser depositado</label><span style='color:red;'>*</span>
+        <input name="conta" type="text" class="form-control" id="conta" placeholder="Informe o valor a ser depositado R$" onkeypress="return SomenteNumero(event);" maxlength="6">
+      </div>
+      <button type="submit" class="btn btn-default">Enviar</button> <button name="limpar" type="reset" id="limpar" class="btn btn-default">Limpar Campos preenchidos!</button>
+
+      <tr>
+      <td colspan="2"><p>
+
+          <span class="style1" style='color:red'> Campos com * são obrigatórios!          </span></p>
+      </td>
+    </tr>
+    </form>
+
+
+
+        </div>
+    </div>
+    </div>

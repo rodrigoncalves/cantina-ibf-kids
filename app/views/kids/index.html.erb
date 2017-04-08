@@ -21,7 +21,7 @@
     <% @kids.each do |kid| %>
       <tr>
         <td align="center"><%= kid.name %></td>
-        <td align="center"><%= number_to_currency(kid.amount, unit:"R$ ", separator:",", delimiter:".") %></td>
+        <td align="center"><%= number_to_currency_br(kid.amount) %></td>
         <td align="center"><%= kid.team.name %></td>
         <td align="center"><%= link_to 'Comprar', kid %></td>
         <td align="center"><%= link_to 'Editar', edit_kid_path(kid) %></td>

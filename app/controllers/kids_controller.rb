@@ -20,6 +20,7 @@ class KidsController < ApplicationController
 
   # GET /kids/1/edit
   def edit
+    @teams = Team.all
   end
 
   # POST /kids

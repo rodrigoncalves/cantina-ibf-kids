@@ -1,36 +1,36 @@
 class KidsController < ApplicationController
   before_action :set_kid, only: [:show, :edit, :update, :destroy]
 
-  # GET /kids
-  # GET /kids.json
+  # GET /acampantes
+  # GET /acampantes.json
   def index
     @kids = Kid.all
   end
 
-  # GET /kids/1
-  # GET /kids/1.json
+  # GET /acampantes/1
+  # GET /acampantes/1.json
   def show
   end
 
-  # GET /kids/new
+  # GET /acampantes/new
   def new
     @kid = Kid.new
     @teams = Team.all
   end
 
-  # GET /kids/1/edit
+  # GET /acampantes/1/edit
   def edit
     @teams = Team.all
   end
 
-  # POST /kids
-  # POST /kids.json
+  # POST /acampantes
+  # POST /acampantes.json
   def create
     @kid = Kid.new(kid_params)
 
     respond_to do |format|
       if @kid.save
-        format.html { redirect_to @kid, notice: 'Kid was successfully created.' }
+        format.html { redirect_to @kid, notice: 'Acampante criado com sucesso.' }
         format.json { render :show, status: :created, location: @kid }
       else
         format.html { render :new }
@@ -39,12 +39,12 @@ class KidsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /kids/1
-  # PATCH/PUT /kids/1.json
+  # PATCH/PUT /acampantes/1
+  # PATCH/PUT /acampantes/1.json
   def update
     respond_to do |format|
       if @kid.update(kid_params)
-        format.html { redirect_to @kid, notice: 'Kid was successfully updated.' }
+        format.html { redirect_to @kid, notice: 'Acampante atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @kid }
       else
         format.html { render :edit }
@@ -53,12 +53,12 @@ class KidsController < ApplicationController
     end
   end
 
-  # DELETE /kids/1
-  # DELETE /kids/1.json
+  # DELETE /acampantes/1
+  # DELETE /acampantes/1.json
   def destroy
     @kid.destroy
     respond_to do |format|
-      format.html { redirect_to kids_url, notice: 'Kid was successfully destroyed.' }
+      format.html { redirect_to kids_url, notice: 'Acampante apagado com sucesso.' }
       format.json { head :no_content }
     end
   end

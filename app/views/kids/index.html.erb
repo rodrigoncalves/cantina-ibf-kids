@@ -9,26 +9,26 @@
 <table class="table table-hover table-bordered highlight responsive-table">
   <thead>
     <tr>
-      <th style="text-align: center">#</th>
-      <th style="text-align: center"><%= t('name') %></th>
-      <th style="text-align: center"><%= t('amount') %></th>
-      <th style="text-align: center"><%= t('team') %></th>
-      <th style="text-align: center" colspan="4"><%= t('actions') %></th>
+      <th>#</th>
+      <th><%= t('name') %></th>
+      <th><%= t('amount') %></th>
+      <th><%= t('team') %></th>
+      <th colspan="4"><%= t('actions') %></th>
     </tr>
   </thead>
 
   <tbody>
-    <% num = 0 %>
+    <% num=0 %>
     <% @kids.each do |kid| %>
       <tr>
-        <td align="center"><%= num += 1 %></td>
-        <td align="center"><%= kid.name %></td>
-        <td align="center"><%= number_to_currency_br(kid.amount) %></td>
-        <td align="center"><%= kid.team.name %></td>
-        <td align="center"><%= link_to t('show'), kid %></td>
-        <td align="center"><%= link_to t('buy'), kid %></td>
-        <td align="center"><%= link_to t('edit'), edit_kid_path(kid) %></td>
-        <td align="center"><%= link_to t('destroy'), kid, method: :delete, data: { confirm: t('destroy_confirm') } %></td>
+        <td><%= num += 1 %></td>
+        <td><%= kid.name %></td>
+        <td><%= number_to_currency_br(kid.amount) %></td>
+        <td><%= kid.team.name %></td>
+        <td><%= link_to t('show'), kid %></td>
+        <td><%= link_to t('buy'), kid %></td>
+        <td><%= link_to t('edit'), edit_kid_path(kid) %></td>
+        <td><%= link_to t('destroy'), kid, method: :delete, data: { confirm: t('destroy_confirm') } %></td>
       </tr>
     <% end %>
   </tbody>

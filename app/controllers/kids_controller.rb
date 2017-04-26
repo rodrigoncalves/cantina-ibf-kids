@@ -12,7 +12,7 @@ class KidsController < ApplicationController
   def show
   end
 
-  # GET /acampantes/new
+  # GET /acampantes/novo
   def new
     @kid = Kid.new
     @teams = Team.all

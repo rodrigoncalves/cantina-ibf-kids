@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
   def show
   end
 
-  # GET /equipes/new
+  # GET /equipes/novo
   def new
     @team = Team.new
   end
@@ -69,6 +69,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.fetch(:team, {})
+      params.require(:team).permit(:name)
     end
 end

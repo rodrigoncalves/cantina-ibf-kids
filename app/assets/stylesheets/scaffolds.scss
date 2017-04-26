@@ -37,14 +37,6 @@ th {
   padding-bottom: 5px;
 }
 
-.table th {
-  text-align: center;
-}
-
-.table td {
-  text-align: center;
-}
-
 td {
   padding-bottom: 7px;
   padding-left: 5px;
@@ -94,4 +86,24 @@ div {
 
 label {
   display: block;
+}
+
+.table th {
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+.fa {
+  color: white;
+}
+
+.fa-black {
+  color: black;
+}
+
+.btn-fixed-width {
+  width: 22px;
 }

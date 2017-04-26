@@ -1,35 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('kids') %></h1>
+<div class="page-header row">
+  <div class="col-sm-6">
+    <h1><%= t('kids') %></h1>
+  </div>
+  <div class="col-sm-6 text-right h2">
+    <%= link_to fa_icon('plus') + ' ' + t('new'), new_kid_path, class: 'btn btn-primary', title: t('new'), style: 'color:white' %>
+    <%= link_to fa_icon('refresh black') + ' ' + t('refresh'), kids_path, class: 'btn btn-default', title: t('refresh'), style: 'color:black' %>
+  </div>
+</div>
 
-<%= link_to t('new'), new_kid_path %>
 <br>
 <br>
 
-<table class="table table-hover table-bordered highlight responsive-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th><%= t('name') %></th>
-      <th><%= t('amount') %></th>
-      <th><%= t('team') %></th>
-      <th colspan="4"><%= t('actions') %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% num=0 %>
-    <% @kids.each do |kid| %>
-      <tr>
-        <td><%= num += 1 %></td>
-        <td><%= kid.name %></td>
-        <td><%= number_to_currency_br(kid.amount) %></td>
-        <td><%= kid.team.name %></td>
-        <td><%= link_to t('show'), kid %></td>
-        <td><%= link_to t('buy'), kid %></td>
-        <td><%= link_to t('edit'), edit_kid_path(kid) %></td>
-        <td><%= link_to t('destroy'), kid, method: :delete, data: { confirm: t('destroy_confirm') } %></td>
+<div class="row">
+  <table class="table table-hover table-bordered highlight responsive-table">
+    <thead>
+      <tr class="active">
+        <th>#</th>
+        <th><%= t('name') %></th>
+        <th><%= t('amount') %></th>
+        <th><%= t('team') %></th>
+        <th colspan="4"><%= t('actions') %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% num=0 %>
+      <% @kids.each do |kid| %>
+        <tr>
+          <td><%= num += 1 %></td>
+          <td><%= kid.name %></td>
+          <td><%= number_to_currency_br(kid.amount) %></td>
+          <td><%= kid.team.name %></td>
+          <td><%= link_to fa_icon('info'), kid, class: 'btn btn-success btn-xs btn-fixed-width', title: t('show') %></td>
+          <td><%= link_to fa_icon('shopping-cart'), kid, class: 'btn btn-warning btn-xs btn-fixed-width', title: t('buy') %></td>
+          <td><%= link_to fa_icon('pencil-square-o'), edit_kid_path(kid), class: 'btn btn-primary btn-xs btn-fixed-width', title: t('edit') %></td>
+          <td><%= link_to fa_icon('trash-o'), kid, method: :delete, class: 'btn btn-danger btn-xs btn-fixed-width', title: t('destroy'), data: { confirm: t('destroy_confirm') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

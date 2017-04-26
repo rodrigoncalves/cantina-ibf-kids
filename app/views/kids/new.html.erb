@@ -1,5 +1,5 @@
-<h1>Novo acampante</h1>
+<h1><%= t('kid_new') %></h1>
 
 <%= render 'form', kid: @kid %>
 
-<%= link_to 'Voltar', kids_path %>
+<%= link_to t('back'), kids_path, class: 'btn btn-default' %>

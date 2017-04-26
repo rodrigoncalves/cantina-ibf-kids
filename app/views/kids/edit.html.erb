@@ -1,6 +1,6 @@
-<h1>Editar criança</h1>
+<h1><%= t('kid_edit') %></h1>
 
 <%= render 'form', kid: @kid %>
 
-<%= link_to 'Ver', @kid %> |
-<%= link_to 'Voltar', kids_path %>
+<%= link_to t('show'), @kid %> |
+<%= link_to t('back'), kids_path %>

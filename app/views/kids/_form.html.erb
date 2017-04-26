@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Nome" %>
+    <%= f.label t('name') %>
     <%= f.text_field :name, { class: "form-control", placeholder: "Ex: João da Silva" } %>
   </div>
 
   <div class="field">
-    <%= f.label "Saldo" %>
+    <%= f.label t('amount') %>
     <%= f.text_field :amount, { class: "form-control", placeholder: "Ex: 50.00" } %>
   </div>
 
   <div class="field">
-    <%= f.label "Equipe" %>
+    <%= f.label t('team') %>
     <%= f.select :team_id, options_for_select(@teams.map{ |t| [t.name, t.id] }), {}, {class: "form-control"} %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Salvar", class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 
 <% end %>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Equipes</h1>
+<h1><%= t('teams') %></h1>
 
 <%= link_to t('team_new'), new_team_path %>
 <br>
@@ -10,8 +10,8 @@
   <thead>
     <tr>
       <th style="text-align: center">#</th>
-      <th style="text-align: center">Name</th>
-      <th style="text-align: center" colspan="3">Ações</th>
+      <th style="text-align: center"><%= t('name') %></th>
+      <th style="text-align: center" colspan="3"><%= t('actions') %></th>
     </tr>
   </thead>
 
@@ -23,7 +23,7 @@
         <td align="center"><%= team.name %></td>
         <td align="center"><%= link_to 'Ver', team %></td>
         <td align="center"><%= link_to 'Editar', edit_team_path(team) %></td>
-        <td align="center"><%= link_to 'Remover', team, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td align="center"><%= link_to 'Remover', team, method: :delete, data: { confirm: t('destroy_confirm') } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,7 +1,32 @@
 ---
 pt-BR:
-  team_new: "Nova equipe"
-  team_updated: "Equipe atualizada com sucesso."
+  teams: Equipes
+  team: Equipe
+  team_new: Nova equipe
+  team_edit: Editar equipe
+  team_created: Equipe criada com sucesso.
+  team_updated: Equipe atualizada com sucesso.
+  team_destroyed: Equipe removida com sucesso.
+
+  kids: Acampantes
+  kid: Acampante
+  kid_new: Novo acampante
+  kid_edit: Editar acampante
+  kid_created: Acampante criado com sucesso.
+  kid_updated: Acampante atualizado com sucesso.
+  kid_destroyed: Acampante removido com sucesso.
+
+  name: Nome
+  amount: Saldo
+  buy: Comprar
+
+  actions: Ações
+  new: Cadastrar novo
+  show: Ver
+  edit: Editar
+  destroy: Remover
+  back: Voltar
+  destroy_confirm: Tem certeza que deseja remover?
 
   activerecord:
     errors:
@@ -151,9 +176,9 @@ pt-BR:
     select:
       prompt: Por favor selecione
     submit:
-      create: Criar %{model}
-      submit: Salvar %{model}
-      update: Atualizar %{model}
+      create: Salvar
+      submit: Salvar
+      update: Salvar
   number:
     currency:
       format:

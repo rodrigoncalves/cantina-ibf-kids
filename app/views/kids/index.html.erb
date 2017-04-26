@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lista de acampantes</h1>
+<h1><%= t('kids') %></h1>
 
-<%= link_to 'Cadastrar novo', new_kid_path %>
+<%= link_to t('new'), new_kid_path %>
 <br>
 <br>
 
@@ -10,10 +10,10 @@
   <thead>
     <tr>
       <th style="text-align: center">#</th>
-      <th style="text-align: center">Nome</th>
-      <th style="text-align: center">Saldo</th>
-      <th style="text-align: center">Equipe</th>
-      <th style="text-align: center" colspan="4">Ações</th>
+      <th style="text-align: center"><%= t('name') %></th>
+      <th style="text-align: center"><%= t('amount') %></th>
+      <th style="text-align: center"><%= t('team') %></th>
+      <th style="text-align: center" colspan="4"><%= t('actions') %></th>
     </tr>
   </thead>
 
@@ -25,10 +25,10 @@
         <td align="center"><%= kid.name %></td>
         <td align="center"><%= number_to_currency_br(kid.amount) %></td>
         <td align="center"><%= kid.team.name %></td>
-        <td align="center"><%= link_to 'Ver', kid %></td>
-        <td align="center"><%= link_to 'Comprar', kid %></td>
-        <td align="center"><%= link_to 'Editar', edit_kid_path(kid) %></td>
-        <td align="center"><%= link_to 'Remover', kid, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td align="center"><%= link_to t('show'), kid %></td>
+        <td align="center"><%= link_to t('buy'), kid %></td>
+        <td align="center"><%= link_to t('edit'), edit_kid_path(kid) %></td>
+        <td align="center"><%= link_to t('destroy'), kid, method: :delete, data: { confirm: t('destroy_confirm') } %></td>
       </tr>
     <% end %>
   </tbody>

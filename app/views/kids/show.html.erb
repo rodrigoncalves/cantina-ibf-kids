@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nome:</strong>
+  <strong><%= t('name') %>:</strong>
   <%= @kid.name %>
 </p>
 
 <p>
-  <strong>Saldo:</strong>
+  <strong><%= t('amount') %>:</strong>
   <%= @kid.amount %>
 </p>
 
 <p>
-  <strong>Equipe:</strong>
+  <strong><%= t('team') %>:</strong>
   <%= @kid.team.name %>
 </p>
 
-<%= link_to 'Editar', edit_kid_path(@kid) %> |
-<%= link_to 'Voltar', kids_path %>
+<%= link_to t('edit'), edit_kid_path(@kid) %> |
+<%= link_to t('back'), kids_path %>

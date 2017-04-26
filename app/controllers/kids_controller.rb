@@ -30,7 +30,7 @@ class KidsController < ApplicationController
 
     respond_to do |format|
       if @kid.save
-        format.html { redirect_to @kid, notice: 'Acampante criado com sucesso.' }
+        format.html { redirect_to @kid, notice: t('kid_created') }
         format.json { render :show, status: :created, location: @kid }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class KidsController < ApplicationController
   def update
     respond_to do |format|
       if @kid.update(kid_params)
-        format.html { redirect_to @kid, notice: 'Acampante atualizado com sucesso.' }
+        format.html { redirect_to @kid, notice: t('kid_updated') }
         format.json { render :show, status: :ok, location: @kid }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class KidsController < ApplicationController
   def destroy
     @kid.destroy
     respond_to do |format|
-      format.html { redirect_to kids_url, notice: 'Acampante apagado com sucesso.' }
+      format.html { redirect_to kids_url, notice: t('kid_destroyed') }
       format.json { head :no_content }
     end
   end

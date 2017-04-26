@@ -28,7 +28,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Equipe criada com sucesso.' }
+        format.html { redirect_to @team, notice: t('team_created') }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Equipe apagada com sucesso.' }
+      format.html { redirect_to teams_url, notice: t('team_destroyed') }
       format.json { head :no_content }
     end
   end

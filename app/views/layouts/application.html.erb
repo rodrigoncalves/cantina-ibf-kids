@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Cantina IBF Kids</title>
+    <title><%= t('app_title') %></title>
 
     <%= csrf_meta_tags %>
 
@@ -12,14 +12,12 @@
   <body>
     <nav class="navbar navbar-inverse">
       <div class="container-fluid nav-wrapper container">
-        <div class="navbar-header">
-          <%= link_to 'Início', '/', class: 'navbar-brand active'%>
-        </div>
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Acampantes', '/acampantes'%></li>
-          <li><%= link_to 'Equipes', '/equipes'%></li>
-          <li><%= link_to 'Produtos', '#'%></li>
-          <li><%= link_to 'Histórico', '#'%></li>
+          <li class="<%= 'active' if request.fullpath == '/' %>"><%= link_to 'Início', '/', class: 'navbar-brand' %></li>
+          <li class="<%= 'active' if params[:controller] == 'kids' and request.fullpath != '/' %>"><%= link_to t('kids'), kids_path %></li>
+          <li class="<%= 'active' if params[:controller] == 'teams' %>"><%= link_to t('teams'), teams_path %></li>
+          <li class="<%= 'active' if params[:controller] == 'products' %>"><%= link_to t('products'), '#' %></li>
+          <li class="<%= 'active' if params[:controller] == 'histories' %>"><%= link_to t('history'), '#' %></li>
         </ul>
       </div>
     </nav>

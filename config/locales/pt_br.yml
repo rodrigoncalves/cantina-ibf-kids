@@ -18,6 +18,21 @@ pt-BR:
   kid_updated: Acampante atualizado com sucesso.
   kid_destroyed: Acampante removido com sucesso.
 
+  products: Produtos
+  product: Produto
+  product_new: Novo produto
+  product_edit: Editar produto
+  product_created: Produto criado com sucesso.
+  product_updated: Produto atualizado com sucesso.
+  product_destroyed: Produto removido com sucesso.
+
+  history: Histórico
+  history_new: Nova compra
+  history_edit: Editar compra
+  history_created: Compra realizada com sucesso.
+  history_updated: Registro de compra atualizado com sucesso.
+  history_destroyed: Registro de compra removido com sucesso.
+
   name: Nome
   amount: Saldo
   buy: Comprar

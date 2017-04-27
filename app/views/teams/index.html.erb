@@ -1,30 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('teams') %></h1>
+<div class="page-header row">
+  <div class="col-sm-6">
+    <h1><%= t('teams') %></h1>
+  </div>
+  <div class="col-sm-6 text-right h2">
+    <%= link_to fa_icon('plus') + ' ' + t('new'), new_team_path, class: 'btn btn-primary', title: t('new'), style: 'color:white' %>
+    <%= link_to fa_icon('refresh black') + ' ' + t('refresh'), teams_path, class: 'btn btn-default', title: t('refresh'), style: 'color:black' %>
+  </div>
+</div>
 
-<%= link_to t('team_new'), new_team_path %>
-<br>
-<br>
-
-<table class="table table-hover table-bordered highlight responsive-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th><%= t('name') %></th>
-      <th colspan="3"><%= t('actions') %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% num=0 %>
-    <% @teams.each do |team| %>
-      <tr>
-        <td><%= num += 1 %></td>
-        <td><%= team.name %></td>
-        <td><%= link_to 'Ver', team %></td>
-        <td><%= link_to 'Editar', edit_team_path(team) %></td>
-        <td><%= link_to 'Remover', team, method: :delete, data: { confirm: t('destroy_confirm') } %></td>
+<div class="row">
+  <table class="table table-hover table-bordered highlight responsive-table">
+    <thead>
+      <tr class="active">
+        <th>#</th>
+        <th><%= t('name') %></th>
+        <th colspan="3"><%= t('actions') %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% num=0 %>
+      <% @teams.each do |team| %>
+        <tr>
+          <td><%= num += 1 %></td>
+          <td><%= team.name %></td>
+          <td><%= link_to fa_icon('info'), team, class: 'btn btn-success btn-xs btn-fixed-width', title: t('show') %></td>
+          <td><%= link_to fa_icon('pencil-square-o'), edit_team_path(team), class: 'btn btn-primary btn-xs btn-fixed-width', title: t('edit') %></td>
+          <td><%= link_to fa_icon('trash-o'), team, method: :delete, class: 'btn btn-danger btn-xs btn-fixed-width', title: t('destroy'), data: { confirm: t('destroy_confirm') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

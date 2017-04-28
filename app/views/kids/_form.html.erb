@@ -13,17 +13,18 @@
 
   <div class="field">
     <%= f.label t('name') %>
-    <%= f.text_field :name, { class: "form-control", placeholder: "Ex: João da Silva" } %>
+    <%= f.text_field :name, { class: "form-control" } %>
   </div>
 
   <div class="field">
     <%= f.label t('amount') %>
-    <%= f.text_field :amount, { class: "form-control", placeholder: "Ex: 50.00" } %>
+    <%= f.text_field :amount, { class: "form-control", data: { autonumeric: { aSign: 'R$ ', aSep: '.', aDec: ',', mDec: 2, vMax: "999.99", vMin: "-999.99" }}} %>
+
   </div>
 
   <div class="field">
     <%= f.label t('team') %>
-    <%= f.select :team_id, options_for_select(@teams.map{ |t| [t.name, t.id] }), {}, {class: "form-control"} %>
+    <%= f.select :team_id, options_for_select(@teams.map{ |t| [t.name, t.id] }), {}, { class: "form-control" } %>
   </div>
 
   <div class="actions">

@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label t('price') %>
-    <%= f.text_field :price, { class: "form-control" } %>
+    <%= f.text_field :price, { class: "form-control", data: { autonumeric: { aSign: 'R$ ', aSep: '.', aDec: ',', mDec: 2, vMax: "999.99", vMin: "0.00" }}} %>
   </div>
 
   <div class="actions">

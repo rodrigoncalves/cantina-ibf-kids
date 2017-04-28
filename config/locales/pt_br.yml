@@ -36,6 +36,7 @@ pt-BR:
   name: Nome
   amount: Saldo
   buy: Comprar
+  price: Preço
 
   actions: Ações
   new: Cadastrar novo

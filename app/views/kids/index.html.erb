@@ -30,7 +30,7 @@
           <td><%= kid.name %></td>
           <td><%= number_to_currency_br(kid.amount) %></td>
           <td><%= kid.team.name %></td>
-          <td><%= link_to fa_icon('shopping-cart'), kid, class: 'btn btn-warning btn-xs btn-fixed-width', title: t('buy') %></td>
+          <td><%= link_to fa_icon('shopping-cart'), '#', class: 'btn btn-warning btn-xs btn-fixed-width', title: t('buy') %></td>
           <td><%= link_to fa_icon('info'), kid, class: 'btn btn-success btn-xs btn-fixed-width', title: t('show') %></td>
           <td><%= link_to fa_icon('pencil-square-o'), edit_kid_path(kid), class: 'btn btn-primary btn-xs btn-fixed-width', title: t('edit') %></td>
           <td><%= link_to fa_icon('trash-o'), kid, method: :delete, class: 'btn btn-danger btn-xs btn-fixed-width', title: t('destroy'), data: { confirm: t('destroy_confirm') } %></td>

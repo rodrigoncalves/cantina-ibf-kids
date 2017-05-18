@@ -26,6 +26,7 @@ pt-BR:
   product_updated: Produto atualizado com sucesso.
   product_destroyed: Produto removido com sucesso.
 
+  histories: Histórico de compras
   history: Histórico
   history_new: Nova compra
   history_edit: Editar compra
@@ -37,6 +38,7 @@ pt-BR:
   amount: Saldo
   buy: Comprar
   price: Preço
+  timestamp: Data - Horário
 
   actions: Ações
   new: Cadastrar novo
@@ -265,4 +267,5 @@ pt-BR:
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+      custom: "%d/%m (%a) - %H:%M"
     pm: ''

@@ -18,7 +18,7 @@
           <li class="<%= 'active' if params[:controller] == 'kids' and request.fullpath != '/' %>"><%= link_to t('kids'), kids_path %></li>
           <li class="<%= 'active' if params[:controller] == 'teams' %>"><%= link_to t('teams'), teams_path %></li>
           <li class="<%= 'active' if params[:controller] == 'products' %>"><%= link_to t('products'), products_path %></li>
-          <li class="<%= 'active' if params[:controller] == 'histories' %>"><%= link_to t('history'), '#' %></li>
+          <li class="<%= 'active' if params[:controller] == 'histories' %>"><%= link_to t('history'), histories_path %></li>
         </ul>
       </div>
     </nav>

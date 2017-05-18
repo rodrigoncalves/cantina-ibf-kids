@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :histories
   root 'kids#index'
 
   get 'acampantes/novo', to: 'kids#new', as: :new_kid

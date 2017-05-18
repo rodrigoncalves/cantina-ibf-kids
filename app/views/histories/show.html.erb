@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('kid') %>:</strong>
+  <%= @history.kid %>
+</p>
+
+<p>
+  <strong><%= t('product') %>:</strong>
+  <%= @history.product %>
+</p>
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

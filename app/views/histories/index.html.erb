@@ -1,0 +1,40 @@
+<div class="page-header row">
+  <div class="col-sm-6">
+    <h1><%= t('histories') %></h1>
+  </div>
+  <div class="col-sm-6 text-right h2">
+    <%= link_to fa_icon('plus') + ' ' + t('new'), new_history_path, class: 'btn btn-primary', title: t('new'), style: 'color:white' %>
+    <%= link_to fa_icon('refresh black') + ' ' + t('refresh'), histories_path, class: 'btn btn-default', title: t('refresh'), style: 'color:black' %>
+  </div>
+</div>
+
+<div class="row">
+  <table class="table table-hover table-bordered highlight responsive-table">
+    <thead>
+      <tr class="active">
+        <th>#</th>
+        <th><%= t('timestamp') %></th>
+        <th><%= t('kid') %></th>
+        <th><%= t('team') %></th>
+        <th><%= t('products') %></th>
+        <th colspan="2"><%= t('actions') %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% num=0 %>
+      <% @histories.each do |history| %>
+      <% kid = Kid.find(history.kid_id) %>
+        <tr>
+          <td><%= num += 1 %></td>
+          <td><%= I18n.l(history.created_at, format: :custom) %></td>
+          <td><%= kid.name %></td>
+          <td><%= Team.find(kid.team.id).name %></td>
+          <td><%= Product.find(history.product_id).name %></td>
+          <td><%= link_to fa_icon('pencil-square-o'), edit_history_path(history), class: 'btn btn-primary btn-xs btn-fixed-width', title: t('edit') %></td>
+          <td><%= link_to fa_icon('trash-o'), history, method: :delete, class: 'btn btn-danger btn-xs btn-fixed-width', title: t('destroy'), data: { confirm: t('destroy_confirm') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
